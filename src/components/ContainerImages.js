@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ContainerImages = ({images, onItemClick}) => {
-    console.log(images)
     return (
         <section className="gallery-container">
             {images.map((item, index) => {
