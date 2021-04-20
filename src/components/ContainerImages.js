@@ -1,14 +1,14 @@
+import React from 'react';
 
-
-const ContainerImages = (images) => {
-    console.log(images.images)
+const ContainerImages = ({images, onItemClick}) => {
+    console.log(images)
     return (
         <section className="gallery-container">
-            {images.images.map((item, index) => {
-            return <img key={index} src={item.url} alt={item.title} />
+            {images.map((item, index) => {
+                return <img key={index} src={item.url} alt={item.title} onClick={() => onItemClick(item.id)} />
             })}
-      </section>
+        </section>
     )
 }
 
-export default ContainerImages
+export default React.memo(ContainerImages);
